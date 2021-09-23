@@ -29,7 +29,6 @@ function assignment_submitted(array $config, \stdClass $event) {
     $lang = utils\get_course_lang($course);
 
     return [[
-        'assignment' => strval($assignment),
         'actor' => utils\get_user($config, $user),
         'verb' => [
             'id' => 'http://activitystrea.ms/schema/1.0/submit',

@@ -27,6 +27,7 @@ function assignment_graded(array $config, \stdClass $event) {
     $course = $repo->read_record_by_id('course', $event->courseid);
     $instructor = $repo->read_record_by_id('user', $event->userid);
     $assignment = $repo->read_record_by_id('assign', $grade->assignment);
+    $assignmentTag = $repo->read_record_by_id('tag', $);
     $lang = utils\get_course_lang($course);
 
     $gradecomment = null;
@@ -56,7 +57,6 @@ function assignment_graded(array $config, \stdClass $event) {
     }
 
     $statement = [
-        'assignment' => strval($assignment),
         'actor' => utils\get_user($config, $user),
         'verb' => [
             'id' => 'http://adlnet.gov/expapi/verbs/scored',
