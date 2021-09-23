@@ -56,7 +56,7 @@ function assignment_graded(array $config, \stdClass $event) {
     }
 
     $statement = [
-        'assignment' => $assignment,
+        'assignment' => strval($assignment),
         'actor' => utils\get_user($config, $user),
         'verb' => [
             'id' => 'http://adlnet.gov/expapi/verbs/scored',
